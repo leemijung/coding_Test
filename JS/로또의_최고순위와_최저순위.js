@@ -45,3 +45,23 @@ function solution(lottos, win_nums) {
 
 //answer[0] : 가능한 최고 순위
 //answer[1] : 가능한 최저 순위
+
+
+
+//다른 풀이
+function solution(lottos, win_nums) {
+    const rank = [6, 6, 5, 4, 3, 2, 1];
+
+    let minCount = lottos.filter(v => win_nums.includes(v)).length;
+    let zeroCount = lottos.filter(v => !v).length;
+
+    const maxCount = minCount + zeroCount;
+
+    return [rank[maxCount], rank[minCount]];
+}
+
+//forEach - 해당 배열의 모든 인자에 접근해서 반환
+//filter - 조건에 참인 경우의 배열 인자에만 접근해서 반환
+
+//!0이 true 임을 이용
+//v가 0이면 -> !v는 1이므로 '참'
