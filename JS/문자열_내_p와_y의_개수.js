@@ -46,3 +46,11 @@ function solution(s){
 
 //'p' 횟수와 'y' 횟수가 같다면 -> true
 //다르다면 -> false
+
+
+
+//<다른풀이>
+
+function numPY(s){
+    return s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length;
+}
