@@ -54,3 +54,20 @@ function solution(s){
 function numPY(s){
     return s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length;
 }
+
+
+
+//<다른풀이>
+
+let answer=true;
+let p=s.match(/p/gi);
+let y=s.match(/y/gi);
+
+if(p===null){p=[];}
+if(y===null){y=[];}
+
+if(p.length!==y.length){answer=false;}
+return answer;
+
+//match 메서드는 일치하는 모든 결과를 저장해서 새로운 배열을 만든다
+//단, 일치하는 항목이 아예 없는 경우에는 null 값이 반환된다
